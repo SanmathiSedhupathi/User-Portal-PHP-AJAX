@@ -53,32 +53,29 @@ This system allows users to register, securely log in, and manage their profile 
 project-root/
 │
 ├── css/
-│ └── profile.css
-| └── loogin.css
-| └── signup.css
+│   ├── profile.css          # Styles for profile page
+│   ├── login.css            # Styles for login page
+│   └── signup.css           # Styles for signup page
 │
 ├── js/
-│ ├── signup.js # Handles registration AJAX and validation
-│ ├── login.js # Manages login authentication and token storage
-│ └── profile.js # Loads and updates user profile via AJAX
+│   ├── signup.js            # Handles registration AJAX and validation
+│   ├── login.js             # Manages login authentication and token storage
+│   └── profile.js           # Loads and updates user profile via AJAX
 │
 ├── php/
-│ ├── db.php # MySQL database connection
-│ ├── signup.php # Signup logic (validations + insert)
-│ ├── login.php # Login logic (authentication + Redis)
-│ ├── getProfile.php # Returns profile info for logged-in user
-│ └── updateProfile.php # Handles profile update requests
+│   ├── db.php               # MySQL database connection
+│   ├── signup.php           # Signup logic (validations + insert)
+│   ├── login.php            # Login logic (authentication + Redis)
+│   ├── getProfile.php       # Returns profile info for logged-in user
+│   ├── updateProfile.php    # Handles profile update requests
+│   └── redisSession.php     # Redis connection setup
 │
-├── php/
-| ├── redisSession.php # Redis connection setup
-|
-├── index.html # Login page
-├── signup.html # Signup form
-├── profile.html # Profile details and update UI
-└── README.md # Project documentation
+├── index.html               # Login page
+├── signup.html              # Signup form
+├── profile.html             # Profile details and update UI
+└── README.md                # Project documentation
 
-
----
+----
 
 ## 🧠 Technologies Used
 
