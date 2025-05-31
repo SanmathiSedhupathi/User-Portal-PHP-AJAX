@@ -131,8 +131,9 @@ project-root/
   Update your DB credentials in php/db.php
 
 3. **Start Redis**
+   ```
           redis-server
-   
+   ```
 4. **Run the Application**
 
     Place the project folder in your web server directory (e.g., htdocs/ for XAMPP)
