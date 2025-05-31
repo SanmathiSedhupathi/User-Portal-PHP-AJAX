@@ -76,7 +76,7 @@ project-root/
 └── README.md                # Project documentation
 
 ----
-
+```
 ## 🧠 Technologies Used
 
 | Frontend      | Backend     | Database  | Caching  |
@@ -117,6 +117,7 @@ project-root/
   Create a MySQL database (e.g., user_system)
 
   Run this SQL to create the users table:
+  ```
   CREATE TABLE users (
       id INT AUTO_INCREMENT PRIMARY KEY,
       username VARCHAR(100) NOT NULL,
@@ -126,6 +127,7 @@ project-root/
       dob DATE DEFAULT NULL,
       contact VARCHAR(20) DEFAULT NULL
   );
+```
   Update your DB credentials in php/db.php
 
 3. **Start Redis**
@@ -141,17 +143,21 @@ project-root/
 ----
 
 🧪 Password Rules for Signup
+```
       1. At least 8 characters 
       2. One uppercase letter
       3. One lowercase letter
       4. One numeric digit
       5. One special character (e.g., !@#$%^&*())
+```
       
 ----
 
 🧹 Future Enhancements
+```
      1.  Add profile picture upload using AJAX + PHP
      2.  Reset password functionality
      3.  Email verification after registration
      4.  OAuth login via Google or GitHub
      5.  Admin dashboard for user management
+```
