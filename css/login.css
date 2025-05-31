@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background: #0d0221;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  user-select: none;
+}
+
+/* Light Theme */
+body.light-theme {
+  background: #f4f4f8;
+  color: #2c2c2c;
+}
+
+/* Animated gradient background */
+.background-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(270deg, #6e56bf, #bf94ff, #6e56bf);
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+  filter: brightness(0.3);
+  pointer-events: none;
+  transition: filter 0.5s ease;
+}
+
+body.light-theme .background-gradient {
+  filter: brightness(0.7);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Particles canvas */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Theme toggle switch at top right */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #7a56ff;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 8px;
+  font-size: 18px;
+  color: #fff;
+  user-select: none;
+}
+
+.slider i {
+  pointer-events: none;
+  filter: drop-shadow(0 0 3px #bf94ffaa);
+}
+
+input:checked + .slider {
+  background-color: #bf94ff;
+  box-shadow: 0 0 20px #bf94ffcc;
+}
+
+input:checked + .slider i.fa-moon {
+  color: #444;
+  filter: none;
+}
+
+input:checked + .slider i.fa-sun {
+  color: #fff;
+  filter: drop-shadow(0 0 6px #fff);
+}
+
+input:not(:checked) + .slider i.fa-moon {
+  color: #fff;
+  filter: drop-shadow(0 0 6px #bf94ff);
+}
+
+input:not(:checked) + .slider i.fa-sun {
+  color: #444;
+  filter: none;
+}
+
+/* Layout container with image left, form right */
+.login-wrapper {
+  position: relative;
+  display: flex;
+  width: 90vw;
+  max-width: 960px;
+  height: auto;
+  min-height: 620px;
+  background: transparent;
+  z-index: 10;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 0 24px #9a76ffbb,
+    inset 0 0 15px #bf94ffcc;
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+/* Left side image */
+.left-side {
+  flex: 1.1;
+  overflow: hidden;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  background: #3a2a6a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 30px #bf94ffbb;
+}
+
+.left-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: brightness(0.75);
+  transition: filter 0.5s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+body.light-theme .left-side img {
+  filter: brightness(0.9);
+}
+
+/* Right side login container */
+.login-container {
+  flex: 1;
+  padding: 3.2rem 3rem 3rem 3rem;
+  background: rgba(34, 22, 68, 0.85);
+  backdrop-filter: blur(18px);
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+  color: #ddd;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  user-select: text;
+}
+
+body.light-theme .login-container {
+  background: rgba(255 255 255 / 0.85);
+  color: #2c2c2c;
+  box-shadow: 0 0 40px #a276ffaa;
+}
+
+/* Heading */
+.login-container h2 {
+  margin-bottom: 1.8rem;
+  font-weight: 700;
+  font-size: 2.7rem;
+  letter-spacing: 0.1rem;
+  user-select: text;
+  text-shadow: none;
+  color: inherit;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Inputs */
+input[type="email"],
+input[type="password"] {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 15px;
+  border: 2.5px solid transparent;
+  outline: none;
+  background-color: rgba(47, 22, 85, 0.9);
+  color: #ddd;
+  
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+  user-select: text;
+}
+
+input::placeholder {
+  color: #bda6ffcc;
+  font-weight: 500;
+}
+
+input:focus {
+  border-color: #bf94ffcc;
+  box-shadow:
+    0 0 12px #bf94ffcc;
+  transform: scale(1.03);
+  background-color: rgba(47, 22, 85, 1);
+  color: #eee;
+}
+
+/* Light theme inputs */
+body.light-theme input[type="email"],
+body.light-theme input[type="password"] {
+  background-color: #faf9ff;
+  color: #2c2c2c;
+  
+}
+
+body.light-theme input:focus {
+  background-color: #fff;
+  
+  color: #230061;
+}
+
+/* Button */
+form button {
+  background: linear-gradient(135deg, #bf94ff, #8b5cf6);
+  border: none;
+  border-radius: 18px;
+  padding: 1.15rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #230061;
+  cursor: pointer;
+  width: 100%;
+  box-shadow:
+    0 0 15px #bf94ffbb,
+    inset 0 0 18px #a278ffcc;
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+form button:hover {
+  background: linear-gradient(135deg, #a278ff, #b17aff);
+  box-shadow:
+    0 0 25px #bf94ffdd,
+    inset 0 0 25px #a278ffcc;
+  transform: scale(1.07);
+}
+
+form button:active {
+  transform: scale(0.97);
+}
+
+/* Register button */
+.register-btn {
+  margin-top: 2.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #bf94ffcc;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+  outline-offset: 3px;
+}
+
+.register-btn:hover,
+.register-btn:focus {
+  color: #a26eee;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Accessibility */
+.register-btn:focus {
+  outline: 3px solid #bf94ffcc;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .left-side {
+    display: none; 
+  }
+
+  .login-wrapper {
+    width: 100vw;       
+    height: auto;      
+    max-width: 400px;   
+    border-radius: 24px;
+    flex-direction: column;
+  }
+
+  .login-container {
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  /* Smaller login-wrapper box */
+  .login-wrapper {
+    width: 320px;        /* narrower */
+    min-height: 500px;   /* less height */
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 1rem;       /* optional padding */
+  }
+
+  /* Position toggle switch above the login-wrapper with space */
+  .theme-toggle {
+    position: fixed;
+    top: 5px;            /* some distance from top */
+    right: 10px;          /* right aligned */
+    z-index: 20;
+    width: 50px;
+    height: auto;
+  }
+
+  .switch {
+    width: 50px;
+    height: 28px;
+  }
+
+  .slider {
+    font-size: 14px;
+    padding: 0 6px;
+  }
+
+  /* Smaller fonts and inputs inside login-container */
+  .login-container {
+    padding: 2rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .login-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+  }
+
+  form button {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    border-radius: 16px;
+  }
+
+  .register-btn {
+    font-size: 1rem;
+    margin-top: 1.6rem;
+  }
+}
+
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
