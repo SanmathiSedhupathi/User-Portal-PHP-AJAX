@@ -51,9 +51,9 @@ This system allows users to register, securely log in, and manage their profile 
 ## 📁 Project Directory Structure
 
 project-root/
-│
-├── css/
-│   ├── profile.css          # Styles for profile page
+```│
+```├── css/
+```│   ├── profile.css          # Styles for profile page
 │   ├── login.css            # Styles for login page
 │   └── signup.css           # Styles for signup page
 │
