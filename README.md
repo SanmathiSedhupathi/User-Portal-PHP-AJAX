@@ -110,8 +110,8 @@ project-root/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/SanmathiSedhupathi/SanmathiSedhupathi/User-Portal-PHP-AJAX.git
+   cd User-Portal-PHP-AJAX
    
 2. **Database Setup**
   Create a MySQL database (e.g., user_system)
